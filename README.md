@@ -66,9 +66,6 @@ This project involves performing a climate analysis of Honolulu, Hawaii using Py
 - `/api/v1.0/<start>`: Minimum, average, and maximum temperatures from the start date.
 - `/api/v1.0/<start>/<end>`: Minimum, average, and maximum temperatures from the start date to the end date.
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details.
 
 ## Acknowledgments
 
