@@ -1,4 +1,3 @@
-
 # Import the necessary libraries
 import numpy as np
 from flask import Flask, jsonify
@@ -9,7 +8,6 @@ import datetime as dt
 
 # Set up the database engine for SQLite
 engine = create_engine(r"sqlite:///C:\Users\zarap\OneDrive\UofT BootCamp\Class Project\sqlalchemy-challenge\SurfsUp\Resources\hawaii.sqlite")
-
 
 # Reflect the existing database into a new model
 Base = automap_base()
@@ -38,6 +36,7 @@ def welcome():
 # Define the precipitation route
 @app.route("/api/v1.0/precipitation")
 def precipitation():
+    """Return precipitation data for the last year as json."""
     # Create a session link from Python to the DB
     session = Session(engine)
     
@@ -58,6 +57,7 @@ def precipitation():
 # Define the stations route
 @app.route("/api/v1.0/stations")
 def stations():
+    """Return a list of stations as json."""
     # Create a session link from Python to the DB
     session = Session(engine)
     
@@ -73,6 +73,7 @@ def stations():
 # Define the temperature observations route
 @app.route("/api/v1.0/tobs")
 def tobs():
+    """Return temperature observations for the most active station for the last year as json."""
     # Create a session link from Python to the DB
     session = Session(engine)
     
@@ -100,6 +101,7 @@ def tobs():
 @app.route("/api/v1.0/<start>")
 @app.route("/api/v1.0/<start>/<end>")
 def stats(start=None, end=None):
+    """Return minimum, average, and maximum temperatures from the start date or between the start and end date as json."""
     # Create a session link from Python to the DB
     session = Session(engine)
     
